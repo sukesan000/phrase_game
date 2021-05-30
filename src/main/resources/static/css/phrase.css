@@ -1,0 +1,12 @@
+.chose_area ul li{
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 10px 15px;
+    list-style: none;
+    border: solid 2px #000000;
+    border-bottom: none;
+}
+
+.chose_area ul li:last-child{
+    border-bottom: 2px solid #000000;
+}
