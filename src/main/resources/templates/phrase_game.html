@@ -12,18 +12,23 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">◯◯◯に当てはまるフレーズを選んで</h4>
-                    <button type="button" class="btn btn-primary btn-lg btn-block text-left" th:text="${btn1}"></button>
-                    <button type="button" class="btn btn-primary btn-lg btn-block text-left" th:text="${btn2}"></button>
-                    <button type="button" class="btn btn-primary btn-lg btn-block text-left" th:text="${btn3}"></button>
+                    <form method="post" th:action="@{/}">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block text-left" name=btn1
+                                th:text="${btn1}" th:value="${btn1}"></button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block text-left" name=btn2
+                                th:text="${btn2}" th:value="${btn2}"></button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block text-left" name=btn3
+                                th:text="${btn3}" th:value="${btn3}"></button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <div id="phrase">
-        <h5 class="text-center">◯◯◯の◯◯◯の連れ</h5>
-        <h5 class="text-center">美味しい◯◯◯作ったお前</h5>
-        <h5 class="text-center">◯◯◯な女がタイプの俺</h5>
-        <h5 class="text-center">一目惚れ</h5>
+        <p class="text-center"><span th:text="${word1}?: '◯◯◯'"></span>の<span th:text="${word2}?: '◯◯◯'"></span>の連れ</p>
+        <p class="text-center">美味しい<span th:text="${word3}?: '◯◯◯'"></span>作ったお前</p>
+        <p class="text-center"><span th:text="${word4}?: '◯◯◯'"></span>な女がタイプの俺</p>
+        <p class="text-center">一目惚れ</p>
     </div>
 </body>
 </html>
