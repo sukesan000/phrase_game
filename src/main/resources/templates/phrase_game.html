@@ -24,10 +24,10 @@
             </div>
         </div>
     </div>
-    <div id="phrase">
-        <p class="text-center"><span th:text="${word1}?: '◯◯◯'"></span>の<span th:text="${word2}?: '◯◯◯'"></span>の連れ</p>
-        <p class="text-center">美味しい<span th:text="${word3}?: '◯◯◯'"></span>作ったお前</p>
-        <p class="text-center"><span th:text="${word4}?: '◯◯◯'"></span>な女がタイプの俺</p>
+    <div id="phrase" th:object="${form}">
+        <p class="text-center"><span th:text="*{word1}?: '◯◯◯'"></span>の<span th:text="*{word2}?: '◯◯◯'"></span>の連れ</p>
+        <p class="text-center">美味しい<span th:text="*{word3}?: '◯◯◯'"></span>作ったお前</p>
+        <p class="text-center"><span th:text="*{word4}?: '◯◯◯'"></span>な女がタイプの俺</p>
         <p class="text-center">一目惚れ</p>
     </div>
 </body>
