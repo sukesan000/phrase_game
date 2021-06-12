@@ -51,9 +51,13 @@ public class MainController {
                 break;
         }
         model.addAttribute("form", completion_phrase);
-        wordList.remove(selected_phrase);
+        if (wordList.size() > 3) {
+            wordList.remove(selected_phrase);
+            mainService.setPhrase(model, wordList);
+        } else {
+            mainService.setPhrase(model, wordList);
+        }
         pushCnt++;
-        mainService.setPhrase(model, wordList);
         return "phrase_game";
     }
 
