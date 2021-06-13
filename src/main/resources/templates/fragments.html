@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>fragment</title>
+</head>
+<body>
+<div th:fragment="phrase_area">
+    <div id="phrase" th:object="${form}">
+        <p class="text-center"><span th:text="*{word1}?: '◯◯◯'"></span>の<span th:text="*{word2}?: '◯◯◯'"></span>の連れ</p>
+        <p class="text-center">美味しい<span th:text="*{word3}?: '◯◯◯'"></span>作ったお前</p>
+        <p class="text-center"><span th:text="*{word4}?: '◯◯◯'"></span>な女がタイプの俺</p>
+        <p class="text-center">一目惚れ</p>
+    </div>
+</div>
+</body>
+</html>

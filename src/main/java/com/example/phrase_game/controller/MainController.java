@@ -1,5 +1,6 @@
 package com.example.phrase_game.controller;
 
+import com.example.phrase_game.form.Ajax_data;
 import com.example.phrase_game.form.Completion_phrase;
 import com.example.phrase_game.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,9 @@ public class MainController {
         return "phrase_game";
     }
 
-    @PostMapping(value = "/", params = "btn1")
-    public String chosePhrase1(@RequestParam(name = "btn1", required = false) String selected_phrase, Model model) {
+    @PostMapping(value = "/")
+    public String chosePhrase1(@RequestBody Ajax_data aData, Model model) {
+        String selected_phrase = aData.getPhrName();
         switch (pushCnt) {
             case 1:
                 completion_phrase.setWord1(selected_phrase);
